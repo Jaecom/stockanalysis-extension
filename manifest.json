@@ -1,0 +1,20 @@
+{
+	"manifest_version": 3,
+	"name": "Stockanalysis Extension",
+	"description": "Base Level Extension",
+	"version": "1.0",
+	"action": {
+		"default_popup": "index.html"
+	},
+	"permissions": ["tabs", "scripting"],
+	"background": {
+		"service_worker": "background.js"
+	},
+	"content_scripts": [
+		{
+			"js": ["scripts/content.js"],
+			"matches": ["https://stockanalysis.com/stocks/screener/*"]
+		}
+	],
+	"host_permissions": ["https://stockanalysis.com/*"]
+}
